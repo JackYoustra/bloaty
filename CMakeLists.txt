@@ -154,6 +154,8 @@ else()
   set_property(TARGET libprotoc PROPERTY FOLDER "third_party")
   set_property(TARGET protoc PROPERTY FOLDER "third_party")
 endif()
+set_target_properties(protoc PROPERTIES LINK_FLAGS "-sNODERAWFS=1")
+set_target_properties(zlib PROPERTIES INTERFACE_INCLUDE_DIRECTORIES "${CMAKE_CURRENT_SOURCE_DIR};${CMAKE_CURRENT_BINARY_DIR}")
 
 include_directories(.)
 include_directories(src)
