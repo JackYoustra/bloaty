@@ -9,13 +9,6 @@ RUN emcmake cmake -B build -S . -DCMakeBuildType=MinSizeRel -DCMAKE_CXX_FLAGS="-
 RUN cmake --build build -j 10
 RUN cmake --build build --target install -j 10
 
-FROM alpine:latest
-
-RUN apk update && apk add libstdc++ libgcc
-
-COPY --from=build /bloaty/bloaty/build/bloaty /usr/local/bin/bloaty
-
-# Check that bloaty is installed
-RUN bloaty --version
-
-ENTRYPOINT [ "bloaty" ]
+FROM scratch AS export-stage
+COPY --from=build /bloaty/bloaty/build/bloaty.js .
+COPY --from=build /bloaty/bloaty/build/bloaty.wasm .
