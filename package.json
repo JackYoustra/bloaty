@@ -1,0 +1,24 @@
+{
+    "name": "bloaty-js",
+    "version": "1.0.0",
+    "description": "Bloaty moment",
+    "main": "build/bloaty.js",
+    "files": [
+      "build/bloaty.{js,wasm}"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/JackYoustra/bloaty.git"
+    },
+    "keywords": [
+      "Bloaty",
+      "WebAssembly",
+      "Wasm"
+    ],
+    "author": "Jack Youstra",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/JackYoustra/bloaty/issues"
+    },
+    "homepage": "https://github.com/JackYoustra/bloaty#readme"
+  }
